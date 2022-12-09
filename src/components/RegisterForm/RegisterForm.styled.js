@@ -1,28 +1,20 @@
 import styled from "styled-components";
-export const PhonebookBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
-export const Form = styled.form`
-   border: 1px solid #d3d3d3;
-   padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: max-content;
-     margin: 0 auto;
-`
 
-export const Label = styled.label`
+export const RegForm = styled.form`
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin: 40px 0px;
+`;
+
+export const RegLbl = styled.label`
     display: flex;
     flex-direction: column;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 5px;
-`
-export const InputForm = styled.input`
+    align-items: center;
+    margin-top: 15px;
+    font-size: 25px;
+`;
+export const RegInput = styled.input`
     display: block;
     border: none;
     border-radius: 20px;
@@ -34,24 +26,10 @@ export const InputForm = styled.input`
     font-size: 15px;
     padding: 10px 20px;
     margin-top: 10px;
-`
-export const ButtonAdd = styled.button`
-//   border-radius: 20px;
-//   border: none;
-//   margin: 10px 10px;
-//   padding: 5px 10px;
-//   font-size: 15px;
-//   text-align: center;
-//   color: #524f4e;
-//   box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+`;
 
-//   :hover {
-//   background: #cccaca;
-//   box-shadow: 0 15px 20px #f3f2f5;
-
-
-
- border: 0px;
+export const RegBtn = styled.button`
+    border: 0px;
     display: inline-block;
     padding: 12px 30px;
     margin: 30px auto;

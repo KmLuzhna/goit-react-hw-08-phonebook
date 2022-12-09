@@ -1,6 +1,7 @@
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { useAuth } from '../Hooks/useAuth';
-
+import { ContactPage } from './Navigation.styled';
+import { RiContactsFill } from 'react-icons/ri';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -8,9 +9,9 @@ export const Navigation = () => {
   return (
     <nav>
       {isLoggedIn && (
-        <NavLink to="/contacts">
-          Contacts
-        </NavLink>
+        <ContactPage to="/contacts">
+          <RiContactsFill size="25" />  Contacts
+        </ContactPage>
       )}
     </nav>
   );

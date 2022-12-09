@@ -1,8 +1,9 @@
-import { ButtonDelete, ContactEl, NewContactsList } from './ContactList.styled';
+import { ButtonDelete, ContactEl, ContactsText, NewContactsList } from './ContactList.styled';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter, getContacts } from '../../redux/ContactsRedux/selector';
 import { deleteContact } from "redux/ContactsRedux/operations"
+import { RiDeleteBin2Fill } from 'react-icons/ri';
 
 
 export default function ContactList(task) {
@@ -24,13 +25,14 @@ export default function ContactList(task) {
         <NewContactsList>
             {getVisibleContacts.map((item) =>(
                 <ContactEl key={item.id}>
-                    <p>
+                    <ContactsText>
                         {item.name}: {item.number}
-                    </p>
+                    </ContactsText>
                     <ButtonDelete
                         type="button"
                         onClick={() => dispatch(deleteContact(item.id))}
-                    >Delete
+                    >
+                        <RiDeleteBin2Fill size="25" />
                     </ButtonDelete>
                 </ContactEl>
             ))}

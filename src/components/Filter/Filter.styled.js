@@ -19,6 +19,6 @@ export const InputFilter = styled.input`
         0 0 4px rgba(0,0,0,0.1);
     font-size: 15px;
     padding: 10px 20px;
-    margin-top: 10px;
+    margin: 10px auto;
     width: max-content;
 `

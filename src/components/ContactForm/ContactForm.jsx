@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { addContact } from "redux/ContactsRedux/operations";
 import { useSelector } from 'react-redux';
-import {  getContacts } from '../../redux/ContactsRedux/selector';
+import { getContacts } from '../../redux/ContactsRedux/selector';
+import Notiflix from 'notiflix';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -35,14 +36,16 @@ export const ContactForm = () => {
             contact => contact.name.toLowerCase() === name.toLowerCase(),
         )
         ) {
-          alert(`${name} is already in contacts.`);
+          Notiflix.Notify.failure(`${name} is already in contacts.`);
         } else if (contacts.find(contact => contact.number === number)) {
-        alert(`${number} is already in contacts.`);
+        Notiflix.Notify.failure(`${number} is already in contacts.`);
         } else if (name.trim() === '' || number.trim() === '') {
-       alert("Enter the contact's name and number phone!");
+       Notiflix.Notify.failure("Enter the contact's name and number phone!");
         } else {
-        dispatch(addContact({name, number}))
-    }
+            dispatch(addContact({ name, number }))
+            setName("");
+            setNumber("");
+        }
     }
 
     const handleSubmit = (event) => {
@@ -50,8 +53,7 @@ export const ContactForm = () => {
 
     addContactToList(name, number);
 
-    setName("");
-    setNumber("");
+
     };
 
   return (

@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+/* @import-normalize; bring in normalize.css styles */
 
 body {
   margin: 0;
@@ -7,6 +7,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: rgba(222, 237, 250, 0.5690651260504201);
+
+
+  /* background: rgb(238, 215, 225);
+    background: radial-gradient(circle, rgba(238, 215, 225, 1) 0%, rgba(186, 212, 244, 1) 100%); */
 }
 
 code {

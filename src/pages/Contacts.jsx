@@ -20,6 +20,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { TaskEditor } from 'components/TaskEditor/TaskEditor';
 import { fetchContacts } from '../redux/ContactsRedux/operations';
 import { getIsLoading } from '../redux/ContactsRedux/selector';
+import { PhonebookBox } from 'components/ContactForm/ContactForm.styled';
+import { ContactsBox } from 'components/ContactList/ContactList.styled';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -30,14 +32,17 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-      <>
+    <>
+      <PhonebookBox>
           <h1>Phonebook</h1>
-          <ContactForm />
-
+        <ContactForm />
+        <ContactsBox>
           <h2>Contacts</h2>
           <Filter />
-          <div>{isLoading && 'Request in progress...'}</div>
+          {isLoading && 'Request in progress...'}
           <ContactList />
+        </ContactsBox>
+      </PhonebookBox>
     </>
   );
 }
