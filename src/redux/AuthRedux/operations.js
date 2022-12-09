@@ -62,7 +62,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     // After a successful logout, remove the token from the HTTP header
     clearAuthHeader();
   } catch (error) {
-    Notiflix.Notify.failure('Something goes wrong, try again');
+    // Notiflix.Notify.failure('Something goes wrong, try again');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -89,7 +89,7 @@ export const refreshUser = createAsyncThunk(
       const res = await axios.get('/users/current');
       return res.data;
     } catch (error) {
-      Notiflix.Notify.failure('Something goes wrong, try again');
+      // Notiflix.Notify.failure('Something goes wrong, try again');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
